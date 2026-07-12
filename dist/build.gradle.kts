@@ -40,7 +40,7 @@ gradle.projectsEvaluated {
 val packagePath = "com.magmaguy.shaded"
 
 tasks.shadowJar {
-    relocate("org.luaj", "$packagePath.luaj")
+    relocate("org.luaj", "com.magmaguy.shaded.luaj")
     relocate("org.reflections", "$packagePath.reflections")
     archiveBaseName.set("MagmaCore")
     archiveClassifier.set(null as String?)
@@ -77,4 +77,16 @@ tasks {
     jar {
         enabled = false
     }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["shadow"])
+        }
+    }
+}
+
+tasks.publishToMavenLocal {
+    dependsOn(tasks.shadowJar)
 }
