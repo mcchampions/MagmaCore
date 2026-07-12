@@ -1,6 +1,4 @@
 before_install:
   - sdk install java 21.0.8-zulu
+  - sdk install java 25.0.3-zulu
   - sdk use java 21.0.8-zulu
-jdk:
-  - openjdk21
-  - openjdk25
