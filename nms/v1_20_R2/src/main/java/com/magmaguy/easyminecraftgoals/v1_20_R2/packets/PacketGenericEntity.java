@@ -35,7 +35,7 @@ public class PacketGenericEntity extends AbstractPacketEntity<Entity> {
             throw new RuntimeException("No entity class for type: " + bukkitType);
         }
 
-        Entity nmsEntity = craftWorld.createEntity(location, entityClass);
+        Entity nmsEntity = (Entity) craftWorld.createEntity(location, entityClass);
 
         nmsEntity.setPos(location.getX(), location.getY(), location.getZ());
         if (location.getYaw() != 0) nmsEntity.setYRot(location.getYaw());
