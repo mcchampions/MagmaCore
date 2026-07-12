@@ -79,14 +79,6 @@ tasks {
     }
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            from(components["shadow"])
-        }
-    }
-}
-
 tasks.publishToMavenLocal {
     dependsOn(tasks.shadowJar)
 }
