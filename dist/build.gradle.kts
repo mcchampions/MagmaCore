@@ -77,3 +77,19 @@ tasks {
         enabled = false
     }
 }
+
+publishing {
+    publications {
+        named<MavenPublication>("maven") {
+            artifactId = "MagmaCore"
+            artifact(tasks.shadowJar)
+
+            pom.withXml {
+                val dependenciesNode = asNode().get("dependencies")
+                if (dependenciesNode is groovy.util.NodeList && dependenciesNode.isNotEmpty()) {
+                    asNode().remove(dependenciesNode.first() as groovy.util.Node)
+                }
+            }
+        }
+    }
+}
