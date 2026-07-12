@@ -74,6 +74,6 @@ tasks {
         dependsOn(shadowJar)
     }
     jar {
-        enabled = false
+        enabled = true
     }
 }
