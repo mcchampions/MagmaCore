@@ -56,7 +56,6 @@ afterEvaluate {
         publications {
             named<MavenPublication>("maven") {
                 artifactId = "MagmaCore"
-                artifacts.clear()
                 artifact(tasks.shadowJar)
 
                 pom.withXml {
@@ -77,8 +76,4 @@ tasks {
     jar {
         enabled = false
     }
-}
-
-tasks.publishToMavenLocal {
-    dependsOn(tasks.shadowJar)
 }
