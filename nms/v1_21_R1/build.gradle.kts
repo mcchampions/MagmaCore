@@ -3,13 +3,13 @@ plugins {
 }
 
 dependencies {
-    compileOnly("org.spigotmc:spigot:1.21-R0.1-SNAPSHOT:remapped-mojang")
+    compileOnly("org.spigotmc:spigot:1.21.1-R0.1-SNAPSHOT:remapped-mojang")
     compileOnly(project(":nms:core"))
 }
 
 tasks {
     remap {
-        version.set("1.21")
+        version.set("1.21.1")
         dependsOn(jar)
     }
     jar {
