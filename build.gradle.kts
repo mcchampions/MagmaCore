@@ -33,6 +33,7 @@ subprojects {
         maven("https://repo.magmaguy.com/releases")
         maven("https://maven.enginehub.org/repo/")
         maven("https://repo.opencollab.dev/main/")
+        maven("https://repo.codemc.io/repository/nms/")
     }
 
     dependencies {
